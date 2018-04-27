@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = (env) => {
     const devMode = env.env !== 'production';
@@ -33,7 +34,8 @@ module.exports = (env) => {
             new HtmlWebpackPlugin({
                 template: __dirname + '/src/index.html'
             }),
-            new MiniCssExtractPlugin('app.css')
+            new MiniCssExtractPlugin('app.css'),
+            new CopyWebpackPlugin([ { from: 'src/assets', to: 'assets' } ])
         ]
     };
 };
