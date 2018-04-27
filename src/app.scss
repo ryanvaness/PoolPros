@@ -1,5 +1,6 @@
 @import "scss/reset";
+@import "scss/variables";
 
-html {
-    background-color: #ffffff;
+html, body {
+    background-color: $white;
 }
