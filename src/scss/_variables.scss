@@ -4,3 +4,11 @@ $font-color: #3f3f3f;
 $primary-blue: #083d8c;
 $secondary-blue: #216ddf;
 $tertiary-blue: #02c7c6;
+$transparent-black: rgba(0, 0, 0, .6);
+
+$breakpoint-small: "only screen (min-width: 20em)";
+$breakpoint-medium: "only screen and (min-width: 30em)";
+$breakpoint-large: "only screen and (min-width: 65em)";
+
+$font-size: 10px;
+$font-family: 'Open Sans', sans-serif;

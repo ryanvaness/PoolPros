@@ -1,0 +1,26 @@
+@mixin col(
+    $small: 12,
+    $medium: 12,
+    $large: 12,
+    $sum: 12,
+    $pad: 1em,
+    $align: top,
+    $first: false,
+    $last: false
+) {
+    width: percentage($medium/$sum);;
+    font-size: 16px;
+    display: inline-block;
+    padding-left: if($first, 0, $pad);
+    padding-right: if($first, 0, $pad);
+    box-sizing: border-box;
+
+    @media #{$breakpoint-medium} {
+        width: percentage($medium/$sum);
+        vertical-align: $align;
+    }
+    @media #{$breakpoint-large} {
+        width: percentage($large/$sum);
+        vertical-align: $align;
+    }
+}

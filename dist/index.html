@@ -9,25 +9,93 @@
 <body>
     <section class="body">
         <header>
-            <div class="logo">
-                <a href="/">
-                    <img src="/assets/images/pool-pros-logo.png" alt="Pool Pros Logo">
-                </a>
+            <div class="header-left">
+                <div class="logo">
+                    <a href="/">
+                        <img src="/assets/images/pool-pros-logo.png" alt="Pool Pros Logo">
+                    </a>
+                </div>
             </div>
-            <nav class="primary">
-                <ul></ul>
-            </nav>
-            <button></button>
-            <div class="header-image">
-
+            <div class="header-right">
+                <nav class="primary">
+                    <button class="close-menu">&#10060;</button>
+                    <p class="menu-text">Menu</p>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                Pools &amp; Spas
+                                <img src="/assets/images/next-arrow.png">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Supplies
+                                <img src="/assets/images/next-arrow.png">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Resources
+                                <img src="/assets/images/next-arrow.png">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Services
+                                <img src="/assets/images/next-arrow.png">
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <a href="#" class="call-to-action">
+                    <img src="/assets/images/location-icon.png" alt="Find a Pro">
+                    Find a Pro
+                </a>
+                <button class="mobile-menu">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </button>
             </div>
         </header>
+        <div class="header-image">
+            <img src="/assets/images/water-image.png">
+        </div>
         <main class="content">
             <div class="dealers">
                 <div class="dealers--filter">
-                    <div class="dealers--count">
+                    <div class="dealers--header">
+                        <div class="dealers--count">
+                            <span>7 dealers in 28226</span>
+                        </div>
+                        <div class="dealers--dropdown">
+                            <span>Filter Results</span>
+                        </div>
+                        <button class="filter-dropdown-toggle">&#9660;</button>
                     </div>
-                    <div class="dealers--filters"></div>
+                    <div class="dealers--categories">
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="category[]">Service
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="category[]">Installation
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="category[]">Residential
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="category[]">Commercial
+                            <span class="checkmark"></span>
+                            <img src="/assets/images/tool-tip-icon-filtering.png"
+                                 alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                                 data-tooltip="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                                 height="19px"
+                                 width="19px">
+                        </label>
+                    </div>
                 </div>
                 <section class="dealers--list">
                     <!--
@@ -44,10 +112,53 @@
             </div>
         </main>
         <footer>
-            <div class="social"></div>
-            <nav class="utility"></nav>
-            <div class="copyright"></div>
+            <div class="footer-logo">
+                <img src="/assets/images/pool-pros-logo-footer.png" alt="Pool Pros Logo">
+            </div>
+            <div class="social">
+                <span class="social-left">Connect With Us</span>
+                <ul class="social-right">
+                    <li>
+                        <a href="#">
+                            <img src="/assets/images/twitter-icon.png" alt="Pool Pro's Twitter">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="/assets/images/facebook-icon.png" alt="Pool Pro's Facebook">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="/assets/images/youtube-icon.png" alt="Pool Pro's Youtube">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <nav class="utility">
+                <ul>
+                    <li>
+                        <a href="#">Dealers and Distribution</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Commercial Service
+                            <img 
+                                src="/assets/images/action-commercial-icon.png"
+                                alt="Commercial Service"
+                                height="12px"
+                                width="12px">
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="copyright">
+                <div>&copy; 2017 Pool Pros</div>
+                <div><a href="#">Privacy Policy</a></div>
+                <div><a href="#">Terms and Conditions</a></div>
+            </div>
         </footer>
     </section>
+    <div class="overlay"></div>
 <script type="text/javascript" src="app.js"></script></body>
 </html>

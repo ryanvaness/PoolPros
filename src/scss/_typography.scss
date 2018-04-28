@@ -1,0 +1,58 @@
+body, html {
+    font-size: $font-size;
+    font-family: $font-family;
+}
+
+a {
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+header {
+    .call-to-action {
+        font-size: 1.2rem;
+        font-weight: 900;
+        text-transform: uppercase;
+    }
+}
+
+nav.primary {
+    font-size: 1.6rem;
+
+    .close-menu {
+        font-size: 2rem;
+        cursor: pointer;
+    }
+    .menu-text {
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+}
+.dealers {
+    font-size: 1.4rem;
+
+    &--count {
+        font-weight: bold;
+    }
+    &--dropdown {
+        font-weight: bold;
+    }
+    .checkbox-container {
+        font-size: 1.6rem;
+    }
+}
+.social {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.utility {
+    font-size: 1rem;
+}
+
+.copyright {
+    font-size: 1rem;
+}

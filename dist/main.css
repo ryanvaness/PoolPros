@@ -1,3 +1,67 @@
+/* OPEN SANS */
+@font-face {
+  font-family: 'Open Sans';
+  src: url("/assets/fonts/open-sans/OpenSans-Bold.ttf");
+  font-weight: 700; }
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url("/assets/fonts/open-sans/OpenSans-BoldItalic.ttf");
+  font-weight: 700;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url("/assets/fonts/open-sans/OpenSans-ExtraBold.ttf");
+  font-weight: 900; }
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url("/assets/fonts/open-sans/OpenSans-ExtraBoldItalic.ttf");
+  font-weight: 900;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url("/assets/fonts/open-sans/OpenSans-Italic.ttf");
+  font-weight: 500;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url("/assets/fonts/open-sans/OpenSans-Light.ttf");
+  font-weight: 300; }
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url("/assets/fonts/open-sans/OpenSans-LightItalic.ttf");
+  font-weight: 300;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url("/assets/fonts/open-sans/OpenSans-Regular.ttf");
+  font-weight: 500; }
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url("/assets/fonts/open-sans/OpenSans-Semibold.ttf");
+  font-weight: 600; }
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url("/assets/fonts/open-sans/OpenSans-SemiboldItalic.ttf");
+  font-weight: 600;
+  font-style: italic; }
+
+/*SS PIKA*/
+@font-face {
+  font-family: "SSPika";
+  src: url("/assets/fonts/ss-pika/ss-pika.eot");
+  src: url("/assets/fonts/ss-pika/ss-pika.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/ss-pika/ss-pika.woff") format("woff"), url("/assets/fonts/ss-pika/ss-pika.ttf") format("truetype"), url("/assets/fonts/ss-pika/ss-pika.svg#SSPika") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -35,8 +99,334 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-html {
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+img {
+  max-width: 100%;
+  height: auto; }
+
+body.open {
+  overflow: hidden; }
+  body.open .overlay {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0; }
+  body.open nav.primary {
+    top: initial; }
+
+header {
+  padding: 1rem;
+  display: flex;
+  align-items: center; }
+  header:after {
+    display: table;
+    content: '';
+    clear: both; }
+  header .header-right {
+    flex: 1;
+    text-align: right; }
+  header .header-left {
+    flex: 1; }
+  header .logo {
+    padding-right: 2.5rem; }
+  header .call-to-action {
+    width: 105px;
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid #216ddf;
+    border-radius: 3px;
+    padding: .5rem; }
+    header .call-to-action img {
+      height: 20px;
+      padding-right: .5rem; }
+  header .mobile-menu {
+    width: 30px;
+    height: 30px;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    float: right;
+    cursor: pointer;
+    margin-left: 1.5rem; }
+    header .mobile-menu div {
+      width: 19px;
+      height: 4px;
+      margin: 0 0 3px auto; }
+    header .mobile-menu div:nth-child(2) {
+      width: 16px; }
+    header .mobile-menu div:last-child {
+      margin-bottom: 0; }
+
+nav.primary {
+  border-top: 1px solid #02c7c6;
+  border-bottom: 1px solid #02c7c6;
+  position: relative;
+  z-index: 2;
+  position: fixed;
+  width: 100%;
+  top: -999px; }
+  nav.primary .close-menu {
+    position: absolute;
+    right: .5rem;
+    top: .5rem;
+    padding: 0 .5rem;
+    border: 0;
+    height: auto; }
+  nav.primary .menu-text {
+    text-align: center;
+    padding: 2rem; }
+  nav.primary li {
+    margin-bottom: 1px; }
+    nav.primary li:last-child {
+      margin-bottom: 0; }
+    nav.primary li a {
+      display: block;
+      padding: 2rem 4rem 2rem 2rem;
+      position: relative; }
+      nav.primary li a img {
+        position: absolute;
+        right: 1rem;
+        height: 1.5rem;
+        width: 1.5rem; }
+
+.dealers--filter {
+  padding: 1rem; }
+
+.dealers--header {
+  display: flex; }
+  .dealers--header > div {
+    flex: 1; }
+
+.dealers--count {
+  justify-content: center;
+  align-items: center;
+  display: flex; }
+
+.dealers--dropdown {
+  border: 1px solid #dddddd;
+  border-bottom: 0;
+  justify-content: center;
+  align-items: center;
+  display: flex; }
+
+.dealers .filter-dropdown-toggle {
+  height: 46px;
+  width: 46px;
+  border: 1px solid #dddddd;
+  border-left: 0;
+  border-bottom: 0;
+  cursor: pointer; }
+
+.dealers--categories {
+  clear: both;
+  padding: 1.5rem;
+  border: 1px solid #dddddd; }
+  .dealers--categories .checkbox-container {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    padding-left: 2.5rem;
+    margin-bottom: 2rem; }
+    .dealers--categories .checkbox-container input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer; }
+      .dealers--categories .checkbox-container input:checked ~ .checkmark {
+        border: 0; }
+        .dealers--categories .checkbox-container input:checked ~ .checkmark:after {
+          display: block; }
+    .dealers--categories .checkbox-container .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 1.6rem;
+      width: 1.6rem;
+      border: 1px solid #dddddd;
+      border-radius: 4px; }
+      .dealers--categories .checkbox-container .checkmark:after {
+        content: '';
+        position: absolute;
+        display: none;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        width: 5px;
+        height: 5px;
+        border: solid white;
+        border-radius: 1px; }
+
+.footer-logo {
+  padding: 2rem 1rem 1rem;
+  text-align: center; }
+  .footer-logo img {
+    max-width: 50%; }
+
+.social {
+  display: flex;
+  padding: 0 1rem 1rem;
+  align-items: center;
+  max-width: 320px;
+  margin: 0 auto; }
+
+.social-left {
+  flex-grow: 1;
+  flex-basis: 0;
+  text-align: center; }
+
+.social-right {
+  flex-grow: 1;
+  flex-basis: 0;
+  display: flex;
+  justify-content: flex-end; }
+  .social-right li {
+    padding: 0 0.5rem; }
+    .social-right li a {
+      vertical-align: middle; }
+      .social-right li a img {
+        max-height: 2rem; }
+
+.utility {
+  text-align: center;
+  padding: 0 1rem; }
+  .utility ul {
+    display: inline-block;
+    justify-content: center;
+    border-bottom: 1px solid #ffffff;
+    padding: 1rem 0; }
+    .utility ul li {
+      display: inline-block;
+      padding: 0 1rem; }
+      .utility ul li:last-child {
+        border-left: 1px solid #ffffff; }
+      .utility ul li a {
+        line-height: 1rem;
+        vertical-align: middle; }
+
+.copyright {
+  display: flex;
+  justify-content: center;
+  padding: 1rem; }
+  .copyright div {
+    border-right: 1px solid #ffffff;
+    padding: 0 .5rem; }
+    .copyright div:first-child {
+      padding-left: 0; }
+    .copyright div:last-child {
+      border-right: 0;
+      padding-right: 0; }
+
+html, body {
+  color: #3f3f3f;
   background-color: #ffffff; }
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.6); }
+
+.call-to-action {
+  color: #216ddf; }
+
+.mobile-menu {
+  background-color: #ffffff; }
+  .mobile-menu div {
+    background-color: #083d8c; }
+
+nav.primary {
+  background-color: #ffffff; }
+  nav.primary .close-menu {
+    color: #02c7c6;
+    background-color: initial; }
+  nav.primary .menu-text {
+    color: #083d8c; }
+  nav.primary a {
+    background-color: #f6f6f6;
+    color: #3f3f3f; }
+
+.dealers--filter {
+  background-color: #f6f6f6; }
+
+.dealers--count {
+  color: #216ddf; }
+
+.dealers--dropdown {
+  background-color: #ffffff; }
+
+.dealers .filter-dropdown-toggle {
+  background-color: #f6f6f6; }
+
+.dealers--categories {
+  background-color: #ffffff; }
+  .dealers--categories .checkbox-container:hover input ~ .checkmark {
+    background-color: #f6f6f6; }
+  .dealers--categories .checkbox-container input:checked ~ .checkmark {
+    background-color: #216ddf; }
+  .dealers--categories .checkbox-container .checkmark {
+    background-color: #ffffff; }
+    .dealers--categories .checkbox-container .checkmark:after {
+      background-color: #ffffff; }
+
+footer {
+  background-color: #083d8c; }
+  footer, footer a {
+    color: #ffffff; }
+  footer .utility, footer .copyright {
+    background-color: #216ddf; }
+
+body, html {
+  font-size: 10px;
+  font-family: "Open Sans", sans-serif; }
+
+a {
+  text-decoration: none; }
+  a:hover {
+    text-decoration: underline; }
+
+header .call-to-action {
+  font-size: 1.2rem;
+  font-weight: 900;
+  text-transform: uppercase; }
+
+nav.primary {
+  font-size: 1.6rem; }
+  nav.primary .close-menu {
+    font-size: 2rem;
+    cursor: pointer; }
+  nav.primary .menu-text {
+    text-transform: uppercase;
+    font-weight: bold; }
+
+.dealers {
+  font-size: 1.4rem; }
+  .dealers--count {
+    font-weight: bold; }
+  .dealers--dropdown {
+    font-weight: bold; }
+  .dealers .checkbox-container {
+    font-size: 1.6rem; }
+
+.social {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase; }
+
+.utility {
+  font-size: 1rem; }
+
+.copyright {
+  font-size: 1rem; }
 
 
 /*# sourceMappingURL=main.css.map*/

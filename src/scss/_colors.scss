@@ -1,0 +1,77 @@
+html, body {
+    color: $font-color;
+    background-color: $white;
+}
+.overlay {
+    background-color: $transparent-black;
+}
+.call-to-action {
+    color: $secondary-blue;
+}
+.mobile-menu {
+    background-color: $white;
+
+    div {
+        background-color: $primary-blue;
+    }
+}
+nav.primary {
+    background-color: $white;
+
+    .close-menu {
+        color: $tertiary-blue;
+        background-color: initial;
+    }
+    .menu-text {
+        color: $primary-blue;
+    }
+    a {
+        background-color: $grey;
+        color: $font-color;
+    }
+}
+.dealers { 
+    &--filter {
+        background-color: $grey;
+    }
+    &--count {
+        color: $secondary-blue;
+    }
+    &--dropdown {
+        background-color: $white;
+    }
+    .filter-dropdown-toggle {
+        background-color: $grey;
+    }
+    &--categories {
+        background-color: $white;
+
+        .checkbox-container {
+            &:hover input ~ .checkmark {
+                background-color: $grey;
+            }
+            input:checked ~ .checkmark {
+                background-color: $secondary-blue;
+            }
+            .checkmark {
+                background-color: $white;
+
+                &:after {
+                    background-color: $white;
+                }
+            }
+        }
+    }
+}
+
+footer {
+    background-color: $primary-blue;
+
+    &, a {
+        color: $white;
+    }
+
+    .utility, .copyright {
+        background-color: $secondary-blue;
+    }
+}

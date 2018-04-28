@@ -1,6 +1,8 @@
-@import "scss/reset";
+@import "scss/fonts";
 @import "scss/variables";
-
-html, body {
-    background-color: $white;
-}
+@import "scss/mixins";
+@import "scss/reset";
+@import "scss/base";
+@import "scss/layout";
+@import "scss/colors";
+@import "scss/typography";
