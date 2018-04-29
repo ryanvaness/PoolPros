@@ -28,6 +28,11 @@ nav.primary {
     a {
         background-color: $grey;
         color: $font-color;
+
+        @include for-tablet-landscape-up {
+            background-color: initial;
+            color: $primary-blue;
+        }
     }
 }
 .dealers { 
@@ -39,12 +44,20 @@ nav.primary {
     }
     &--dropdown {
         background-color: $white;
+
+        @include for-tablet-landscape-up {
+            background-color: initial;
+        }
     }
     .filter-dropdown-toggle {
         background-color: $grey;
     }
     &--categories {
         background-color: $white;
+
+        @include for-tablet-landscape-up {
+            background-color: initial;
+        }
 
         .checkbox-container {
             &:hover input ~ .checkmark {
@@ -71,7 +84,12 @@ footer {
         color: $white;
     }
 
-    .utility, .copyright {
+    .footer-info {
         background-color: $secondary-blue;
+    }
+    .utility {
+        @include for-tablet-landscape-up {
+            background-color: $primary-blue;
+        }
     }
 }

@@ -119,13 +119,25 @@ body.open {
     right: 0;
     bottom: 0;
     left: 0; }
-  body.open nav.primary {
-    top: initial; }
+
+nav.primary.show {
+  top: initial;
+  text-align: left;
+  left: 0;
+  right: 0; }
+
+.container {
+  max-width: 1350px;
+  margin: 0 auto; }
 
 header {
-  padding: 1rem;
-  display: flex;
-  align-items: center; }
+  padding: 1rem; }
+  header .container {
+    display: flex;
+    align-items: center; }
+  @media screen and (min-width: 900px) {
+    header {
+      margin-top: 35px; } }
   header:after {
     display: table;
     content: '';
@@ -133,6 +145,9 @@ header {
   header .header-right {
     flex: 1;
     text-align: right; }
+    @media screen and (min-width: 900px) {
+      header .header-right {
+        flex: 2; } }
   header .header-left {
     flex: 1; }
   header .logo {
@@ -164,15 +179,27 @@ header {
       width: 16px; }
     header .mobile-menu div:last-child {
       margin-bottom: 0; }
+    @media screen and (min-width: 900px) {
+      header .mobile-menu {
+        display: none; } }
 
 nav.primary {
-  border-top: 1px solid #02c7c6;
-  border-bottom: 1px solid #02c7c6;
+  border-top: 2px solid #02c7c6;
+  border-bottom: 2px solid #02c7c6;
   position: relative;
   z-index: 2;
   position: fixed;
-  width: 100%;
-  top: -999px; }
+  display: block;
+  top: -999px;
+  margin: 0 1rem; }
+  @media screen and (min-width: 900px) {
+    nav.primary {
+      position: relative;
+      top: initial;
+      width: auto;
+      border: 0;
+      z-index: initial;
+      display: inline-block; } }
   nav.primary .close-menu {
     position: absolute;
     right: .5rem;
@@ -180,28 +207,47 @@ nav.primary {
     padding: 0 .5rem;
     border: 0;
     height: auto; }
+    @media screen and (min-width: 900px) {
+      nav.primary .close-menu {
+        display: none; } }
   nav.primary .menu-text {
     text-align: center;
     padding: 2rem; }
+    @media screen and (min-width: 900px) {
+      nav.primary .menu-text {
+        display: none; } }
   nav.primary li {
     margin-bottom: 1px; }
+    @media screen and (min-width: 900px) {
+      nav.primary li {
+        display: inline-block; } }
     nav.primary li:last-child {
       margin-bottom: 0; }
     nav.primary li a {
       display: block;
-      padding: 2rem 4rem 2rem 2rem;
+      padding: 2rem 2.5rem;
       position: relative; }
+      @media screen and (min-width: 900px) {
+        nav.primary li a {
+          padding: 2rem 1rem; } }
       nav.primary li a img {
         position: absolute;
         right: 1rem;
         height: 1.5rem;
         width: 1.5rem; }
+        @media screen and (min-width: 900px) {
+          nav.primary li a img {
+            display: none; } }
 
 .dealers--filter {
   padding: 1rem; }
+  @media screen and (min-width: 900px) {
+    .dealers--filter {
+      display: flex; } }
 
 .dealers--header {
-  display: flex; }
+  display: flex;
+  flex: 1; }
   .dealers--header > div {
     flex: 1; }
 
@@ -216,6 +262,10 @@ nav.primary {
   justify-content: center;
   align-items: center;
   display: flex; }
+  @media screen and (min-width: 900px) {
+    .dealers--dropdown {
+      border: none;
+      border-left: 1px solid #dddddd; } }
 
 .dealers .filter-dropdown-toggle {
   height: 46px;
@@ -224,12 +274,22 @@ nav.primary {
   border-left: 0;
   border-bottom: 0;
   cursor: pointer; }
+  @media screen and (min-width: 900px) {
+    .dealers .filter-dropdown-toggle {
+      display: none; } }
 
 .dealers--categories {
+  flex: 2;
   clear: both;
   padding: 1.5rem;
   border: 1px solid #dddddd; }
+  @media screen and (min-width: 900px) {
+    .dealers--categories {
+      border: 0;
+      display: flex;
+      align-content: center; } }
   .dealers--categories .checkbox-container {
+    flex: 1;
     display: block;
     position: relative;
     cursor: pointer;
@@ -239,6 +299,9 @@ nav.primary {
     user-select: none;
     padding-left: 2.5rem;
     margin-bottom: 2rem; }
+    @media screen and (min-width: 900px) {
+      .dealers--categories .checkbox-container {
+        margin-bottom: 0; } }
     .dealers--categories .checkbox-container input {
       position: absolute;
       opacity: 0;
@@ -271,15 +334,18 @@ nav.primary {
 
 .footer-logo {
   padding: 2rem 1rem 1rem;
-  text-align: center; }
+  text-align: center;
+  max-width: 50%;
+  margin: 0 auto; }
   .footer-logo img {
-    max-width: 50%; }
+    max-width: 190px;
+    width: 100%; }
 
 .social {
   display: flex;
   padding: 0 1rem 1rem;
   align-items: center;
-  max-width: 320px;
+  max-width: 250px;
   margin: 0 auto; }
 
 .social-left {
@@ -292,6 +358,9 @@ nav.primary {
   flex-basis: 0;
   display: flex;
   justify-content: flex-end; }
+  @media screen and (min-width: 900px) {
+    .social-right {
+      justify-content: center; } }
   .social-right li {
     padding: 0 0.5rem; }
     .social-right li a {
@@ -302,16 +371,28 @@ nav.primary {
 .utility {
   text-align: center;
   padding: 0 1rem; }
+  @media screen and (min-width: 900px) {
+    .utility {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      text-align: right; } }
   .utility ul {
     display: inline-block;
     justify-content: center;
     border-bottom: 1px solid #ffffff;
     padding: 1rem 0; }
+    @media screen and (min-width: 900px) {
+      .utility ul {
+        border-bottom: none; } }
     .utility ul li {
       display: inline-block;
       padding: 0 1rem; }
       .utility ul li:last-child {
         border-left: 1px solid #ffffff; }
+        @media screen and (min-width: 900px) {
+          .utility ul li:last-child {
+            border-left: none; } }
       .utility ul li a {
         line-height: 1rem;
         vertical-align: middle; }
@@ -354,6 +435,10 @@ nav.primary {
   nav.primary a {
     background-color: #f6f6f6;
     color: #3f3f3f; }
+    @media screen and (min-width: 900px) {
+      nav.primary a {
+        background-color: initial;
+        color: #083d8c; } }
 
 .dealers--filter {
   background-color: #f6f6f6; }
@@ -363,12 +448,18 @@ nav.primary {
 
 .dealers--dropdown {
   background-color: #ffffff; }
+  @media screen and (min-width: 900px) {
+    .dealers--dropdown {
+      background-color: initial; } }
 
 .dealers .filter-dropdown-toggle {
   background-color: #f6f6f6; }
 
 .dealers--categories {
   background-color: #ffffff; }
+  @media screen and (min-width: 900px) {
+    .dealers--categories {
+      background-color: initial; } }
   .dealers--categories .checkbox-container:hover input ~ .checkmark {
     background-color: #f6f6f6; }
   .dealers--categories .checkbox-container input:checked ~ .checkmark {
@@ -382,8 +473,11 @@ footer {
   background-color: #083d8c; }
   footer, footer a {
     color: #ffffff; }
-  footer .utility, footer .copyright {
+  footer .footer-info {
     background-color: #216ddf; }
+  @media screen and (min-width: 900px) {
+    footer .utility {
+      background-color: #083d8c; } }
 
 body, html {
   font-size: 10px;
@@ -400,7 +494,8 @@ header .call-to-action {
   text-transform: uppercase; }
 
 nav.primary {
-  font-size: 1.6rem; }
+  font-size: 1.6rem;
+  font-weight: bold; }
   nav.primary .close-menu {
     font-size: 2rem;
     cursor: pointer; }
@@ -424,6 +519,9 @@ nav.primary {
 
 .utility {
   font-size: 1rem; }
+  @media screen and (min-width: 900px) {
+    .utility {
+      font-size: 1.2rem; } }
 
 .copyright {
   font-size: 1rem; }

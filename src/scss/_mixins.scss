@@ -1,26 +1,24 @@
-@mixin col(
-    $small: 12,
-    $medium: 12,
-    $large: 12,
-    $sum: 12,
-    $pad: 1em,
-    $align: top,
-    $first: false,
-    $last: false
-) {
-    width: percentage($medium/$sum);;
-    font-size: 16px;
-    display: inline-block;
-    padding-left: if($first, 0, $pad);
-    padding-right: if($first, 0, $pad);
-    box-sizing: border-box;
-
-    @media #{$breakpoint-medium} {
-        width: percentage($medium/$sum);
-        vertical-align: $align;
+@mixin for-phone-only ($width: 599px) {
+    @if $width > 599px {
+        @error "Width must be less than 600px";
     }
-    @media #{$breakpoint-large} {
-        width: percentage($large/$sum);
-        vertical-align: $align;
+    @media screen and (max-width: $width) { @content; }
+}
+@mixin for-tablet-portrait-up ($width: 600px) {
+    @if $width < 600px or $width > 899px {
+        @error "Width must be between 599px and 900px";
     }
+    @media screen and (min-width: $width) { @content; }
+}
+@mixin for-tablet-landscape-up ($width: 900px) {
+    @if $width < 900px or $width > 1199px {
+        @error "Width must be between 899px and 1200px";
+    }
+    @media screen and (min-width: $width) { @content; }
+}
+@mixin for-desktop-up ($width: 1200px) {
+    @if $width < 1200px {
+        @error "Width must be greater than 1199px";
+    }
+    @media screen and (min-width: $width) { @content; }
 }
