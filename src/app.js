@@ -6,6 +6,8 @@ document.addEventListener('click', function delegateClick(event) {
         openMenu();
     } else if (clickedElement.matches('.close-menu')) {
         closeMenu();
+    } else if (clickedElement.matches('.filter-dropdown-toggle')) {
+        toggleCategories();
     }
 
     if (clickedElement.matches('.overlay')) {
@@ -32,4 +34,11 @@ const closeCurrent = () => {
     } else if (document.querySelector('.modal').classList.contains('show')) {
 
     }
+}
+
+const toggleCategories = () => {
+    const categories = document.querySelector('.dealers--categories');
+    const hasOpen = categories.classList.contains('open');
+
+    categories.classList[hasOpen ? 'remove' : 'add']('open');
 }

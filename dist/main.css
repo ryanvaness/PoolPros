@@ -258,7 +258,7 @@ nav.primary {
 
 .dealers--dropdown {
   border: 1px solid #dddddd;
-  border-bottom: 0;
+  border-right: 0;
   justify-content: center;
   align-items: center;
   display: flex; }
@@ -271,8 +271,6 @@ nav.primary {
   height: 46px;
   width: 46px;
   border: 1px solid #dddddd;
-  border-left: 0;
-  border-bottom: 0;
   cursor: pointer; }
   @media screen and (min-width: 900px) {
     .dealers .filter-dropdown-toggle {
@@ -282,7 +280,10 @@ nav.primary {
   flex: 2;
   clear: both;
   padding: 1.5rem;
-  border: 1px solid #dddddd; }
+  border: 1px solid #dddddd;
+  display: none; }
+  .dealers--categories.open {
+    display: block; }
   @media screen and (min-width: 900px) {
     .dealers--categories {
       border: 0;

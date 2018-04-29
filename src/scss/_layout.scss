@@ -186,7 +186,7 @@ nav.primary {
     }
     &--dropdown {
         border: 1px solid darken($grey, 10%);
-        border-bottom: 0;
+        border-right: 0;
         justify-content: center;
         align-items: center;
         display: flex;
@@ -200,8 +200,6 @@ nav.primary {
         height: 46px;
         width: 46px;
         border: 1px solid darken($grey, 10%);
-        border-left: 0;
-        border-bottom: 0;
         cursor: pointer;
 
         @include for-tablet-landscape-up {
@@ -213,8 +211,11 @@ nav.primary {
         clear: both;
         padding: 1.5rem;
         border: 1px solid darken($grey, 10%);
+        display: none;
 
-
+        &.open {
+            display: block;
+        }
         @include for-tablet-landscape-up {
             border: 0;
             display: flex;
