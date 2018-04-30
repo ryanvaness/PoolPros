@@ -11,6 +11,8 @@ document.addEventListener('click', function delegateClick(event) {
         toggleCategories();
     } else if (clickedElement.matches('.dealer--contact')) {
         openModal(event.target);
+    } else if (clickedElement.matches('.close-modal')) {
+        closeModal();
     }
 
     if (clickedElement.matches('.overlay')) {
@@ -22,6 +24,13 @@ document.addEventListener('change', function delegateChange(event) {
     const clickedElement = event.target;
     if (clickedElement.matches('input[name="category[]"]')) {
         filterResults.call(event.target);
+    }
+});
+
+document.addEventListener('input', function delegateInput(event) {
+    const clickedElement = event.target;
+    if (clickedElement.matches('input:required')) {
+        checkFieldValidity(clickedElement);
     }
 });
 
@@ -98,4 +107,9 @@ const buildDealers = dealers => {
     document.querySelector('.dealers--list').innerHTML = dealers.map(function eachDealer({data}) {
         return dealer(data);
     }).join('');
+}
+
+const checkFieldValidity = function(currentField) {
+    currentField.closest('.form-group')
+        .classList[currentField.value && currentField.checkValidity() ? 'add' : 'remove']('valid');
 }

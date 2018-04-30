@@ -189,37 +189,37 @@
             <h3 class="modal-title pro-name">XXXXX</h3>
         </div>
         <div class="modal-body">
-            <p class="form-description">
-                Fill out the form below and <span class="pro-name">XXXXX</span> will get in touch.
-            </p>
-            <form action="#" method="POST" class="email-form">
-                <div class="form-group">
+            <p class="form-description">Fill out the form below and <span class="pro-name">XXXXX</span> will get in touch.</p>
+            <form action="" method="POST" class="email-form">
+                <div class="form-group required">
                     <label for="name">
                         First and last name
                     </label>
                     <input type="text" name="name" id="name" required>
                 </div>
-                <div class="form-group">
+                <div class="form-group required">
                     <label for="phone">
                         Phone number
                     </label>
                     <input type="tel" name="phone" id="phone" required>
                 </div>
-                <div class="form-group">
+                <div class="form-group required">
                     <label for="email">
                         Email address
                     </label>
                     <input type="email" name="email" id="email" required>
                 </div>
-                <div class="form-group">
+                <div class="form-group optional">
                     <label for="comments">Comments or questions</label>
                     <textarea name="comments" id="comments" cols="30" rows="10"></textarea>
                 </div>
-                <div>
+                <div class="form-group optional">
+                    <label>Do you currently own a pool or spa?</label>
                     <label class="radio-container">
                         <input type="radio"
                             name="currentPool[]"
-                            value="Yes">
+                            value="Yes"
+                            checked>
                         Yes
                         <span class="radio"></span>
                     </label>

@@ -61,6 +61,9 @@ header {
     .logo {
         padding-right: 2.5rem;
     }
+    .header-image {
+        margin: 0 auto;
+    }
     .call-to-action {
         width: 105px;
         display: inline-flex;
@@ -228,6 +231,10 @@ nav.primary {
             border: 0;
             display: flex;
             align-content: center;
+        }
+        .checkbox-container {
+            flex: 1;
+            display: block;
         }
     }
     &--list {
@@ -476,12 +483,16 @@ nav.primary {
 }
 .modal {
     position: fixed;
+    overflow: auto;
+    max-height: 100%;
     top: 50%;
-    transform: translateY(-50%);
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
     z-index: 2;
     background-color: $white;
-    margin: auto 1rem;
     display: none;
+    width: 100%;
+    max-width: 500px;
 
     &.show {
         display: block;
@@ -499,6 +510,7 @@ nav.primary {
             position: absolute;
             right: .5rem;
             top: .5rem;
+            font-size: 2rem;
         }
         .modal-pre-header {
             font-size: 1.2rem;
@@ -520,9 +532,10 @@ nav.primary {
 
             label {
                 font-weight: bold;
-                padding-bottom: .75rem;
+                padding-bottom: 1rem;
+                position: relative;
             }
-            input:not([type=checkbox]), textarea {
+            input:not([type=radio]), textarea {
                 border: 1px solid darken($grey, 10%);
                 padding: .5rem;
                 width: 100%;
@@ -533,14 +546,48 @@ nav.primary {
                     display: block;
                     height: 10px;
                     width: 10px;
-                    background-color: red;
                 }
             }
             & > .form-group {
-                margin: 1rem 0;
+                margin: 2rem 0;
 
-                label {
+                label:not(.radio-container) {
                     display: block;
+                    padding-right: 5.5rem;
+                }
+                &.required label:not(.radio-container):after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    height: 2rem;
+                    width: 2rem;
+                    background: url('/assets/images/circle-form.png') center center no-repeat;
+                    background-size: contain;
+                }
+                &.required.valid label:not(.radio-container):after {
+                    background-image: url('/assets/images/checkmark-circle.png');
+                }
+                &.optional label:not(.radio-container):after {
+                    content: 'optional';
+                    display: block;
+                    position: absolute;
+                    font-style: italic;
+                    font-weight: normal;
+                    color: darken($grey, 10%);
+                    top: 0;
+                    right: 0;
+                }
+            }
+            & > div:last-of-type {
+                border-bottom: 1px solid darken($grey, 10%);
+                margin-bottom: 2rem;
+                padding-bottom: 2rem;
+            }
+            button[type=submit] .mobile-only {
+                @include for-tablet-landscape-up {
+                    display: none;
                 }
             }
         }
@@ -549,8 +596,6 @@ nav.primary {
 
 @each $type in $check-radio {
     .#{$type}-container {
-        flex: 1;
-        display: block;
         position: relative;
         cursor: pointer;
         -webkit-user-select: none;
