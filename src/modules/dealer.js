@@ -1,6 +1,6 @@
 function dealer(data) {
-    data.weekHours = parseHours(data.weekHours);
-    data.certifications = parseCertifications(data.certifications);
+    data.hours = parseHours(data.weekHours);
+    data.certs = parseCertifications(data.certifications);
     return dealerHtml(data);
 }
 function dealerHtml (data) {
@@ -17,13 +17,27 @@ function dealerHtml (data) {
             <button class="dealer--contact">Contact this Pro</button>
             <div class="dealer--hours">
                 <h4>Business Hours</h4>
+                <div class="business-hours">${data.hours}</div>
             </div>
-            <div class="dealer--certifications">${data.certifications}</div>
+            <div class="dealer--certifications">${data.certs}</div>
         </article>`
     );
 }
 function parseHours(hours) {
-    return hours;
+    let days = {
+        'Monday': hours.mon,
+        'Tuesday': hours.tue,
+        'Wednesday': hours.wed,
+        'Thursday': hours.thu,
+        'Friday': hours.fri,
+        'Saturday': hours.sat,
+        'Sunday': hours.sun,
+    };
+    let hoursHtml = '';
+    for (let day in days) {
+        hoursHtml += `<p>${day} ${days[day] || "CLOSED"}</p>`;
+    }
+    return hoursHtml;
 }
 function parseCertifications(certifications) {
     return certifications.map(v => {

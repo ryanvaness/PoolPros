@@ -372,7 +372,10 @@ nav.primary {
     margin: 2rem auto; }
     .dealers--list .dealer--hours > h4 {
       font-size: 1.4rem;
-      font-weight: bold; }
+      font-weight: bold;
+      padding-bottom: .5rem; }
+    .dealers--list .dealer--hours .business-hours > p {
+      line-height: 1.5; }
   .dealers--list .dealer--certifications {
     background-color: #f6f6f6;
     padding: 2rem 3rem 2rem 4rem;

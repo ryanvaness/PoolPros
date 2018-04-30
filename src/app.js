@@ -70,7 +70,18 @@ const toggleCategories = () => {
 }
 
 const filterResults = function () {
-    console.log(this.value);
+    let selectedCategories = document.querySelectorAll('[name="category[]"]:checked');
+    let categories = Array.from(selectedCategories).map(function(elem){
+        return elem.value;
+    });
+
+    let filteredDealers = dealers.filter(function({data}) {
+        let thing = data.certifications.filter(function(v) {
+            return categories.includes(v);
+        });
+        return thing.length === categories.length;
+    });
+    buildDealers(filteredDealers);
 }
 
 let dealers = {};
@@ -78,13 +89,13 @@ const response = fetch('/assets/data/dealers.json')
     .then(response => response.json())
     .then(json => {
         dealers = json.dealers;
-        buildDealers(json);
+        document.querySelector('.count').textContent = json.dealers.length;
+        document.querySelector('.zip').textContent = json.zipcode;
+        buildDealers(dealers);
     });
 
-const buildDealers = data => {
-    document.querySelector('.count').textContent = data.dealers.length;
-    document.querySelector('.zip').textContent = data.zipcode;
-    document.querySelector('.dealers--list').innerHTML = data.dealers.map(function eachDealer({data}) {
+const buildDealers = dealers => {
+    document.querySelector('.dealers--list').innerHTML = dealers.map(function eachDealer({data}) {
         return dealer(data);
     }).join('');
 }

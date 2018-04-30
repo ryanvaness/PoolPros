@@ -321,6 +321,10 @@ nav.primary {
                 & > h4 {
                     font-size: 1.4rem;
                     font-weight: bold;
+                    padding-bottom: .5rem;
+                }
+                .business-hours > p {
+                    line-height: 1.5;
                 }
             }
             &--certifications {
