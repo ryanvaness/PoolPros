@@ -61,9 +61,6 @@ header {
     .logo {
         padding-right: 2.5rem;
     }
-    .header-image {
-        margin: 0 auto;
-    }
     .call-to-action {
         width: 105px;
         display: inline-flex;
@@ -103,6 +100,9 @@ header {
             display: none;
         }
     }
+}
+.header-image img {
+    width: 100%;
 }
 nav.primary {
     border-top: 2px solid $tertiary-blue;

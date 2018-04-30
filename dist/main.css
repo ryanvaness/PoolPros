@@ -159,8 +159,6 @@ header {
     flex: 1; }
   header .logo {
     padding-right: 2.5rem; }
-  header .header-image {
-    margin: 0 auto; }
   header .call-to-action {
     width: 105px;
     display: inline-flex;
@@ -191,6 +189,9 @@ header {
     @media screen and (min-width: 900px) {
       header .mobile-menu {
         display: none; } }
+
+.header-image img {
+  width: 100%; }
 
 nav.primary {
   border-top: 2px solid #02c7c6;
