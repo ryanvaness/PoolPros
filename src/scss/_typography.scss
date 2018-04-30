@@ -46,6 +46,27 @@ nav.primary {
     .checkbox-container {
         font-size: 1.6rem;
     }
+    .dealer {
+        &--title {
+            font-size: 2rem;
+            font-weight: 300;
+        }
+        &--phone.mobile-only .number {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        &--phone.desktop-only {
+            font-weight: bold;
+            font-size: 1.8rem;
+        }
+        &--email {
+            font-style: italic;
+        }
+        &--contact {
+            font-weight: bold;
+            font-size: 1.4rem;
+        }
+    }
 }
 .social {
     font-size: 1.2rem;
@@ -62,4 +83,26 @@ nav.primary {
 
 .copyright {
     font-size: 1rem;
+}
+.close-modal {
+    font-size: 2rem;
+}
+.modal-title {
+    font-size: 2rem;
+}
+.modal-pre-header {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.modal-body {
+    font-size: 1.4rem;
+
+    .email-form {
+        label {
+            font-weight: bold;
+        }
+        button[type=submit] {
+            font-weight: bold;
+        }
+    }
 }

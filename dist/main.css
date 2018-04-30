@@ -315,13 +315,12 @@ nav.primary {
       flex: 0 0 33%;
       padding: .5rem; } }
   .dealers--list .dealer--title {
-    font-size: 2rem;
-    font-weight: 300;
     margin: 2.5rem 0 2rem;
     height: 4rem; }
+    @media screen and (min-width: 900px) {
+      .dealers--list .dealer--title {
+        border-bottom: 1px solid #dddddd; } }
   .dealers--list .dealer--phone.mobile-only {
-    color: #ffffff;
-    background-color: #216ddf;
     border-radius: 2px;
     position: relative;
     display: inline-block;
@@ -338,30 +337,19 @@ nav.primary {
       position: absolute;
       background: #083d8c url("/assets/images/phone-icon-mobile.png") center center no-repeat;
       background-size: contain; }
-    .dealers--list .dealer--phone.mobile-only .number {
-      font-size: 1.8rem;
-      font-weight: bold; }
-  .dealers--list .dealer--phone.desktop-only {
-    font-weight: bold;
-    font-size: 1.6rem; }
-    .dealers--list .dealer--phone.desktop-only:before {
-      content: '';
-      height: 2rem;
-      width: 2rem;
-      margin-right: 1rem;
-      display: inline-block;
-      background: url("/assets/images/phone-icon-desktop.png") center center no-repeat;
-      background-size: contain; }
+  .dealers--list .dealer--phone.desktop-only:before {
+    content: '';
+    height: 2rem;
+    width: 2rem;
+    margin-right: 1rem;
+    display: inline-block;
+    background: url("/assets/images/phone-icon-desktop.png") center center no-repeat;
+    background-size: contain; }
   .dealers--list .dealer--email {
-    font-style: italic;
     margin: 1rem 0; }
   .dealers--list .dealer--contact {
-    background-color: #ffffff;
     box-shadow: initial;
     border: 1px solid #02c7c6;
-    color: #083d8c;
-    font-weight: bold;
-    font-size: 1.4rem;
     padding: 1rem 1.5rem 1rem 2.5rem;
     position: relative; }
     .dealers--list .dealer--contact:before {
@@ -382,7 +370,6 @@ nav.primary {
     .dealers--list .dealer--hours .business-hours > p {
       line-height: 1.5; }
   .dealers--list .dealer--certifications {
-    background-color: #f6f6f6;
     padding: 2rem 3rem 2rem 4rem;
     text-align: left;
     height: 12rem; }
@@ -500,38 +487,26 @@ nav.primary {
   left: 50%;
   transform: translateY(-50%) translateX(-50%);
   z-index: 2;
-  background-color: #ffffff;
   display: none;
   width: 100%;
   max-width: 500px; }
   .modal.show {
     display: block; }
   .modal .modal-header {
-    background-color: #083d8c;
-    color: #ffffff;
     position: relative;
     padding: 1.5rem; }
     .modal .modal-header .close-modal {
-      background-color: initial;
       border: none;
-      color: #ffffff;
       position: absolute;
       right: .5rem;
-      top: .5rem;
-      font-size: 2rem; }
-    .modal .modal-header .modal-pre-header {
-      font-size: 1.2rem;
-      font-weight: bold; }
+      top: .5rem; }
     .modal .modal-header .modal-title {
-      font-size: 2rem;
       margin: .5rem 0; }
   .modal .modal-body {
-    padding: 1.5rem;
-    font-size: 1.4rem; }
+    padding: 1.5rem; }
     .modal .modal-body .form-description {
       margin-bottom: 1rem; }
     .modal .modal-body .email-form label {
-      font-weight: bold;
       padding-bottom: 1rem;
       position: relative; }
     .modal .modal-body .email-form input:not([type=radio]), .modal .modal-body .email-form textarea {
@@ -571,12 +546,32 @@ nav.primary {
         top: 0;
         right: 0; }
     .modal .modal-body .email-form > div:last-of-type {
-      border-bottom: 1px solid #dddddd;
-      margin-bottom: 2rem;
-      padding-bottom: 2rem; }
+      border-top: 1px solid #dddddd;
+      margin-top: 2rem;
+      padding-top: 2rem; }
     @media screen and (min-width: 900px) {
       .modal .modal-body .email-form button[type=submit] .mobile-only {
         display: none; } }
+    .modal .modal-body .email-form .button-wrapper {
+      text-align: right; }
+      @media screen and (min-width: 900px) {
+        .modal .modal-body .email-form .button-wrapper {
+          text-align: center; } }
+    .modal .modal-body .email-form button[type=submit] {
+      border: none;
+      padding: 1rem 2rem; }
+      @media screen and (min-width: 900px) {
+        .modal .modal-body .email-form button[type=submit] {
+          position: relative; }
+          .modal .modal-body .email-form button[type=submit]:after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 1rem;
+            height: 1.4rem;
+            width: 1.4rem;
+            background: url("/assets/images/next-arrow.png") center center no-repeat;
+            background-size: contain; } }
 
 .checkbox-container {
   position: relative;
@@ -713,6 +708,17 @@ nav.primary {
     .dealers--categories {
       background-color: initial; } }
 
+.dealers .dealer--phone.mobile-only {
+  color: #ffffff;
+  background-color: #216ddf; }
+
+.dealers .dealer--contact {
+  background-color: #ffffff;
+  color: #083d8c; }
+
+.dealers .dealer--certifications {
+  background-color: #f6f6f6; }
+
 footer {
   background-color: #083d8c; }
   footer, footer a {
@@ -722,6 +728,21 @@ footer {
   @media screen and (min-width: 900px) {
     footer .utility {
       background-color: #083d8c; } }
+
+.modal {
+  background-color: #ffffff; }
+  .modal .modal-header {
+    background-color: #083d8c;
+    color: #ffffff; }
+    .modal .modal-header .close-modal {
+      background-color: initial;
+      color: #ffffff; }
+  .modal .modal-body .email-form button[type=submit] {
+    background-color: initial;
+    color: #02c7c6; }
+    @media screen and (min-width: 900px) {
+      .modal .modal-body .email-form button[type=submit] {
+        color: #3f3f3f; } }
 
 .checkbox-container:hover input ~ .checkbox {
   background-color: #f6f6f6; }
@@ -779,6 +800,20 @@ nav.primary {
     font-weight: bold; }
   .dealers .checkbox-container {
     font-size: 1.6rem; }
+  .dealers .dealer--title {
+    font-size: 2rem;
+    font-weight: 300; }
+  .dealers .dealer--phone.mobile-only .number {
+    font-size: 1.8rem;
+    font-weight: bold; }
+  .dealers .dealer--phone.desktop-only {
+    font-weight: bold;
+    font-size: 1.8rem; }
+  .dealers .dealer--email {
+    font-style: italic; }
+  .dealers .dealer--contact {
+    font-weight: bold;
+    font-size: 1.4rem; }
 
 .social {
   font-size: 1.2rem;
@@ -793,6 +828,23 @@ nav.primary {
 
 .copyright {
   font-size: 1rem; }
+
+.close-modal {
+  font-size: 2rem; }
+
+.modal-title {
+  font-size: 2rem; }
+
+.modal-pre-header {
+  font-size: 1.2rem;
+  font-weight: bold; }
+
+.modal-body {
+  font-size: 1.4rem; }
+  .modal-body .email-form label {
+    font-weight: bold; }
+  .modal-body .email-form button[type=submit] {
+    font-weight: bold; }
 
 
 /*# sourceMappingURL=main.css.map*/

@@ -252,14 +252,14 @@ nav.primary {
                 padding: .5rem;
             }
             &--title {
-                font-size: 2rem;
-                font-weight: 300;
                 margin: 2.5rem 0 2rem;
                 height: 4rem;
+                
+                @include for-tablet-landscape-up {
+                    border-bottom: 1px solid darken($grey, 10%);
+                }
             }
             &--phone.mobile-only {
-                color: $white;
-                background-color: $secondary-blue;
                 border-radius: 2px;
                 position: relative;
                 display: inline-block;
@@ -278,36 +278,22 @@ nav.primary {
                     background: $primary-blue url('/assets/images/phone-icon-mobile.png') center center no-repeat;
                     background-size: contain;
                 }
-                .number {
-                    font-size: 1.8rem;
-                    font-weight: bold;
-                }
             }
-            &--phone.desktop-only {
-                font-weight: bold;
-                font-size: 1.6rem;
-                
-                &:before {
-                    content: '';
-                    height: 2rem;
-                    width: 2rem;
-                    margin-right: 1rem;
-                    display: inline-block;
-                    background: url('/assets/images/phone-icon-desktop.png') center center no-repeat;
-                    background-size: contain;
-                }
+            &--phone.desktop-only:before {
+                content: '';
+                height: 2rem;
+                width: 2rem;
+                margin-right: 1rem;
+                display: inline-block;
+                background: url('/assets/images/phone-icon-desktop.png') center center no-repeat;
+                background-size: contain;
             }
             &--email {
-                font-style: italic;
                 margin: 1rem 0;
             }
             &--contact {
-                background-color: $white;
                 box-shadow: initial;
                 border: 1px solid $tertiary-blue;
-                color: $primary-blue;
-                font-weight: bold;
-                font-size: 1.4rem;
                 padding: 1rem 1.5rem 1rem 2.5rem;
                 position: relative;
 
@@ -335,7 +321,6 @@ nav.primary {
                 }
             }
             &--certifications {
-                background-color: $grey;
                 padding: 2rem 3rem 2rem 4rem;
                 text-align: left;
                 height: 12rem;
@@ -489,7 +474,6 @@ nav.primary {
     left: 50%;
     transform: translateY(-50%) translateX(-50%);
     z-index: 2;
-    background-color: $white;
     display: none;
     width: 100%;
     max-width: 500px;
@@ -498,32 +482,21 @@ nav.primary {
         display: block;
     }
     .modal-header {
-        background-color: $primary-blue;
-        color: $white;
         position: relative;
         padding: 1.5rem;
 
         .close-modal {
-            background-color: initial;
             border: none;
-            color: $white;
             position: absolute;
             right: .5rem;
             top: .5rem;
-            font-size: 2rem;
-        }
-        .modal-pre-header {
-            font-size: 1.2rem;
-            font-weight: bold;
         }
         .modal-title {
-            font-size: 2rem;
             margin: .5rem 0;
         }
     }
     .modal-body {
         padding: 1.5rem;
-        font-size: 1.4rem;
 
         .form-description {
             margin-bottom: 1rem
@@ -531,7 +504,6 @@ nav.primary {
         .email-form {
 
             label {
-                font-weight: bold;
                 padding-bottom: 1rem;
                 position: relative;
             }
@@ -581,13 +553,39 @@ nav.primary {
                 }
             }
             & > div:last-of-type {
-                border-bottom: 1px solid darken($grey, 10%);
-                margin-bottom: 2rem;
-                padding-bottom: 2rem;
+                border-top: 1px solid darken($grey, 10%);
+                margin-top: 2rem;
+                padding-top: 2rem;
             }
             button[type=submit] .mobile-only {
                 @include for-tablet-landscape-up {
                     display: none;
+                }
+            }
+            .button-wrapper {
+                text-align: right;
+
+                @include for-tablet-landscape-up {
+                    text-align: center;
+                }
+            }
+            button[type=submit] {
+                border: none;
+                padding: 1rem 2rem;
+
+                @include for-tablet-landscape-up {
+                    position: relative;
+
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        right: 0;
+                        top: 1rem;
+                        height: 1.4rem;
+                        width: 1.4rem;
+                        background: url('/assets/images/next-arrow.png') center center no-repeat;
+                        background-size: contain;
+                    }
                 }
             }
         }

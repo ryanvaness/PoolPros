@@ -34,6 +34,15 @@ document.addEventListener('input', function delegateInput(event) {
     }
 });
 
+document.querySelector('.email-form').addEventListener('submit', function handleSubmit(event) {
+    event.preventDefault();
+    this.reset();
+    document.querySelectorAll('.form-group.required').forEach(function(elem) {
+        elem.classList.remove('valid');
+    });
+    closeModal();
+});
+
 const openMenu = () => {
     toggleOverlay();
     document.querySelector('nav.primary').classList.add('show');

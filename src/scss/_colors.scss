@@ -59,6 +59,19 @@ nav.primary {
             background-color: initial;
         }
     }
+    .dealer {
+        &--phone.mobile-only {
+            color: $white;
+            background-color: $secondary-blue;
+        }
+        &--contact {
+            background-color: $white;
+            color: $primary-blue;
+        }
+        &--certifications {
+            background-color: $grey;
+        }
+    }
 }
 
 footer {
@@ -74,6 +87,31 @@ footer {
     .utility {
         @include for-tablet-landscape-up {
             background-color: $primary-blue;
+        }
+    }
+}
+.modal {
+    background-color: $white;
+
+    .modal-header {
+        background-color: $primary-blue;
+        color: $white;
+
+        .close-modal {
+            background-color: initial;
+            color: $white;
+        }
+    }
+    .modal-body {
+        .email-form {
+            button[type=submit] {
+                background-color: initial;
+                color: $tertiary-blue;
+
+                @include for-tablet-landscape-up {
+                    color: $font-color;
+                }
+            }
         }
     }
 }
