@@ -103,7 +103,7 @@ const filterResults = function () {
 }
 
 let dealers = {};
-const response = fetch('/assets/data/dealers.json')
+const response = fetch('./assets/data/dealers.json')
     .then(response => response.json())
     .then(json => {
         dealers = json.dealers;
