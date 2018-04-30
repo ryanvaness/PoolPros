@@ -296,6 +296,7 @@ nav.primary {
                 border: 1px solid $tertiary-blue;
                 padding: 1rem 1.5rem 1rem 2.5rem;
                 position: relative;
+                cursor: pointer;
 
                 &:before {
                     content: '';
@@ -490,6 +491,7 @@ nav.primary {
             position: absolute;
             right: .5rem;
             top: .5rem;
+            cursor: pointer;
         }
         .modal-title {
             margin: .5rem 0;
@@ -572,6 +574,7 @@ nav.primary {
             button[type=submit] {
                 border: none;
                 padding: 1rem 2rem;
+                cursor: pointer;
 
                 @include for-tablet-landscape-up {
                     position: relative;

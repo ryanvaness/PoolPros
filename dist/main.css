@@ -351,7 +351,8 @@ nav.primary {
     box-shadow: initial;
     border: 1px solid #02c7c6;
     padding: 1rem 1.5rem 1rem 2.5rem;
-    position: relative; }
+    position: relative;
+    cursor: pointer; }
     .dealers--list .dealer--contact:before {
       content: '';
       display: block;
@@ -499,7 +500,8 @@ nav.primary {
       border: none;
       position: absolute;
       right: .5rem;
-      top: .5rem; }
+      top: .5rem;
+      cursor: pointer; }
     .modal .modal-header .modal-title {
       margin: .5rem 0; }
   .modal .modal-body {
@@ -559,7 +561,8 @@ nav.primary {
           text-align: center; } }
     .modal .modal-body .email-form button[type=submit] {
       border: none;
-      padding: 1rem 2rem; }
+      padding: 1rem 2rem;
+      cursor: pointer; }
       @media screen and (min-width: 900px) {
         .modal .modal-body .email-form button[type=submit] {
           position: relative; }
