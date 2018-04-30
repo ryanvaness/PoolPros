@@ -9,6 +9,8 @@ document.addEventListener('click', function delegateClick(event) {
         closeMenu();
     } else if (clickedElement.matches('.filter-dropdown-toggle')) {
         toggleCategories();
+    } else if (clickedElement.matches('.dealer--contact')) {
+        openModal(event.target);
     }
 
     if (clickedElement.matches('.overlay')) {
@@ -33,6 +35,21 @@ const closeMenu = () => {
     document.querySelector('nav.primary').classList.remove('show');
 }
 
+const openModal = (target) => {
+    let dealer = target.closest('.dealer').querySelector('.dealer--title').textContent;
+    let modal = document.querySelector('.modal');
+    modal.querySelectorAll('.pro-name').forEach(function(elem) {
+        elem.textContent = dealer;
+    });
+    toggleOverlay();
+    modal.classList.add('show');
+}
+
+const closeModal = () => {
+    toggleOverlay();
+    document.querySelector('.modal').classList.remove('show');
+}
+
 const toggleOverlay = () => {
     document.body.classList[document.body.classList.contains('open') ? 'remove' : 'add']('open');
 }
@@ -41,7 +58,7 @@ const closeCurrent = () => {
     if (document.querySelector('nav.primary').classList.contains('show')) {
         closeMenu();
     } else if (document.querySelector('.modal').classList.contains('show')) {
-
+        closeModal();
     }
 }
 

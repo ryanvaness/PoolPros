@@ -111,7 +111,8 @@ img {
   height: auto; }
 
 body.open {
-  overflow: hidden; }
+  overflow: hidden;
+  position: relative; }
   body.open .overlay {
     z-index: 1;
     position: absolute;
@@ -295,49 +296,6 @@ nav.primary {
       border: 0;
       display: flex;
       align-content: center; } }
-  .dealers--categories .checkbox-container {
-    flex: 1;
-    display: block;
-    position: relative;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    padding-left: 2.5rem;
-    margin-bottom: 2rem; }
-    @media screen and (min-width: 900px) {
-      .dealers--categories .checkbox-container {
-        margin-bottom: 0; } }
-    .dealers--categories .checkbox-container input {
-      position: absolute;
-      opacity: 0;
-      cursor: pointer; }
-      .dealers--categories .checkbox-container input:checked ~ .checkmark {
-        border: 0; }
-        .dealers--categories .checkbox-container input:checked ~ .checkmark:after {
-          display: block; }
-    .dealers--categories .checkbox-container .checkmark {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 1.6rem;
-      width: 1.6rem;
-      border: 1px solid #dddddd;
-      border-radius: 4px; }
-      .dealers--categories .checkbox-container .checkmark:after {
-        content: '';
-        position: absolute;
-        display: none;
-        left: 0;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        margin: auto;
-        width: 5px;
-        height: 5px;
-        border: solid white;
-        border-radius: 1px; }
 
 @media screen and (min-width: 900px) {
   .dealers--list {
@@ -526,6 +484,146 @@ nav.primary {
       border-right: 0;
       padding-right: 0; }
 
+.modal {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  background-color: #ffffff;
+  margin: auto 1rem;
+  display: none; }
+  .modal.show {
+    display: block; }
+  .modal .modal-header {
+    background-color: #083d8c;
+    color: #ffffff;
+    position: relative;
+    padding: 1.5rem; }
+    .modal .modal-header .close-modal {
+      background-color: initial;
+      border: none;
+      color: #ffffff;
+      position: absolute;
+      right: .5rem;
+      top: .5rem; }
+    .modal .modal-header .modal-pre-header {
+      font-size: 1.2rem;
+      font-weight: bold; }
+    .modal .modal-header .modal-title {
+      font-size: 2rem;
+      margin: .5rem 0; }
+  .modal .modal-body {
+    padding: 1.5rem;
+    font-size: 1.4rem; }
+    .modal .modal-body .form-description {
+      margin-bottom: 1rem; }
+    .modal .modal-body .email-form label {
+      font-weight: bold;
+      padding-bottom: .75rem; }
+    .modal .modal-body .email-form input:not([type=checkbox]), .modal .modal-body .email-form textarea {
+      border: 1px solid #dddddd;
+      padding: .5rem;
+      width: 100%; }
+      .modal .modal-body .email-form input:not([type=checkbox]):after, .modal .modal-body .email-form textarea:after {
+        content: '';
+        position: relative;
+        display: block;
+        height: 10px;
+        width: 10px;
+        background-color: red; }
+    .modal .modal-body .email-form > .form-group {
+      margin: 1rem 0; }
+      .modal .modal-body .email-form > .form-group label {
+        display: block; }
+
+.checkbox-container {
+  flex: 1;
+  display: block;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding-left: 2.5rem;
+  margin-bottom: 2rem; }
+  @media screen and (min-width: 900px) {
+    .checkbox-container {
+      margin-bottom: 0; } }
+  .checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer; }
+    .checkbox-container input:checked ~ .checkbox {
+      border: 0; }
+      .checkbox-container input:checked ~ .checkbox:after {
+        display: block; }
+  .checkbox-container .checkbox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1.6rem;
+    width: 1.6rem;
+    border: 1px solid #dddddd;
+    border-radius: 4px; }
+    .checkbox-container .checkbox:after {
+      content: '';
+      position: absolute;
+      display: none;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      width: 5px;
+      height: 5px;
+      border: solid white;
+      border-radius: 1px; }
+
+.radio-container {
+  flex: 1;
+  display: block;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding-left: 2.5rem;
+  margin-bottom: 2rem; }
+  @media screen and (min-width: 900px) {
+    .radio-container {
+      margin-bottom: 0; } }
+  .radio-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer; }
+    .radio-container input:checked ~ .radio {
+      border: 0; }
+      .radio-container input:checked ~ .radio:after {
+        display: block; }
+  .radio-container .radio {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1.6rem;
+    width: 1.6rem;
+    border: 1px solid #dddddd;
+    border-radius: 4px; }
+    .radio-container .radio:after {
+      content: '';
+      position: absolute;
+      display: none;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      width: 5px;
+      height: 5px;
+      border: solid white;
+      border-radius: 1px; }
+
 html, body {
   color: #3f3f3f;
   background-color: #ffffff; }
@@ -576,14 +674,6 @@ nav.primary {
   @media screen and (min-width: 900px) {
     .dealers--categories {
       background-color: initial; } }
-  .dealers--categories .checkbox-container:hover input ~ .checkmark {
-    background-color: #f6f6f6; }
-  .dealers--categories .checkbox-container input:checked ~ .checkmark {
-    background-color: #216ddf; }
-  .dealers--categories .checkbox-container .checkmark {
-    background-color: #ffffff; }
-    .dealers--categories .checkbox-container .checkmark:after {
-      background-color: #ffffff; }
 
 footer {
   background-color: #083d8c; }
@@ -595,9 +685,33 @@ footer {
     footer .utility {
       background-color: #083d8c; } }
 
+.checkbox-container:hover input ~ .checkbox {
+  background-color: #f6f6f6; }
+
+.checkbox-container input:checked ~ .checkbox {
+  background-color: #216ddf; }
+
+.checkbox-container .checkbox {
+  background-color: #ffffff; }
+  .checkbox-container .checkbox:after {
+    background-color: #ffffff; }
+
+.radio-container:hover input ~ .radio {
+  background-color: #f6f6f6; }
+
+.radio-container input:checked ~ .radio {
+  background-color: #216ddf; }
+
+.radio-container .radio {
+  background-color: #ffffff; }
+  .radio-container .radio:after {
+    background-color: #ffffff; }
+
 body, html {
   font-size: 10px;
-  font-family: "Open Sans", sans-serif; }
+  font-family: "Open Sans", sans-serif;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: grayscale; }
 
 a {
   text-decoration: none; }

@@ -1,6 +1,8 @@
 body, html {
     font-size: $font-size;
     font-family: $font-family;
+    -webkit-font-smoothing: subpixel-antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 a {

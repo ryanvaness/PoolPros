@@ -82,28 +82,28 @@
                                        name="category[]"
                                        value="Service">
                                 Service
-                                <span class="checkmark"></span>
+                                <span class="checkbox"></span>
                             </label>
                             <label class="checkbox-container">
                                 <input type="checkbox"
                                        name="category[]"
                                        value="Installation">
                                 Installation
-                                <span class="checkmark"></span>
+                                <span class="checkbox"></span>
                             </label>
                             <label class="checkbox-container">
                                 <input type="checkbox"
                                        name="category[]"
                                        value="Residential">
                                 Residential
-                                <span class="checkmark"></span>
+                                <span class="checkbox"></span>
                             </label>
                             <label class="checkbox-container">
                                 <input type="checkbox"
                                        name="category[]"
                                        value="Commercial">
                                 Commercial
-                                <span class="checkmark"></span>
+                                <span class="checkbox"></span>
                                 <img src="/assets/images/tool-tip-icon-filtering.png"
                                     alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
                                     data-tooltip="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
@@ -189,36 +189,48 @@
             <h3 class="modal-title pro-name">XXXXX</h3>
         </div>
         <div class="modal-body">
-            Fill out the form and <span class="pro-name">XXXXX</span> will get in touch.
-            <form action="#" method="POST">
-                <label for="name">
-                    First and last name
-                </label>
-                <input type="text" name="name" id="name" required>
-                <label for="phone">
-                    Phone number
-                </label>
-                <input type="text" name="phone" id="phone" required>
-                <label for="email">
-                    Email address
-                </label>
-                <input type="text" name="email" id="email" required>
-                <label for="comments">Comments or questions</label>
-                <textarea name="comments" id="comments" cols="30" rows="10"></textarea>
-                <label class="checkbox-container">
-                    <input type="checkbox"
-                        name="currentPool[]"
-                        value="Yes">
-                    Yes
-                    <span class="checkmark"></span>
-                </label>
-                <label class="checkbox-container">
-                    <input type="checkbox"
-                        name="category[]"
-                        value="No">
-                    No
-                    <span class="checkmark"></span>
-                </label>
+            <p class="form-description">
+                Fill out the form below and <span class="pro-name">XXXXX</span> will get in touch.
+            </p>
+            <form action="#" method="POST" class="email-form">
+                <div class="form-group">
+                    <label for="name">
+                        First and last name
+                    </label>
+                    <input type="text" name="name" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">
+                        Phone number
+                    </label>
+                    <input type="tel" name="phone" id="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">
+                        Email address
+                    </label>
+                    <input type="email" name="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="comments">Comments or questions</label>
+                    <textarea name="comments" id="comments" cols="30" rows="10"></textarea>
+                </div>
+                <div>
+                    <label class="radio-container">
+                        <input type="radio"
+                            name="currentPool[]"
+                            value="Yes">
+                        Yes
+                        <span class="radio"></span>
+                    </label>
+                    <label class="radio-container">
+                        <input type="radio"
+                            name="currentPool[]"
+                            value="No">
+                        No
+                        <span class="radio"></span>
+                    </label>
+                </div>
                 <button type="submit">
                     <span class="mobile-only">Send</span>
                     <span class="desktop-only">Send my email</span>

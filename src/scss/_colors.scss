@@ -58,22 +58,6 @@ nav.primary {
         @include for-tablet-landscape-up {
             background-color: initial;
         }
-
-        .checkbox-container {
-            &:hover input ~ .checkmark {
-                background-color: $grey;
-            }
-            input:checked ~ .checkmark {
-                background-color: $secondary-blue;
-            }
-            .checkmark {
-                background-color: $white;
-
-                &:after {
-                    background-color: $white;
-                }
-            }
-        }
     }
 }
 
@@ -90,6 +74,23 @@ footer {
     .utility {
         @include for-tablet-landscape-up {
             background-color: $primary-blue;
+        }
+    }
+}
+@each $type in $check-radio {
+    .#{$type}-container {
+        &:hover input ~ .#{$type} {
+            background-color: $grey;
+        }
+        input:checked ~ .#{$type} {
+            background-color: $secondary-blue;
+        }
+        .#{$type} {
+            background-color: $white;
+
+            &:after {
+                background-color: $white;
+            }
         }
     }
 }

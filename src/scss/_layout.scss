@@ -1,5 +1,6 @@
 body.open {
     overflow: hidden;
+    position: relative;
 
     .overlay {
         z-index: 1;
@@ -227,61 +228,6 @@ nav.primary {
             border: 0;
             display: flex;
             align-content: center;
-        }
-
-        .checkbox-container {
-            flex: 1;
-            display: block;
-            position: relative;
-            cursor: pointer;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-            padding-left: 2.5rem;
-            margin-bottom: 2rem;
-
-            @include for-tablet-landscape-up {
-                margin-bottom: 0;
-            }
-
-            input {
-                position: absolute;
-                opacity: 0;
-                cursor: pointer;
-
-                &:checked ~ .checkmark {
-                    border: 0;
-
-                    &:after {
-                        display: block;
-                    }
-                }
-            }
-            .checkmark {
-                position: absolute;
-                top: 0;
-                left: 0;
-                height: 1.6rem;
-                width: 1.6rem;
-                border: 1px solid darken($grey, 10%);
-                border-radius: 4px;
-
-                &:after {
-                    content: '';
-                    position: absolute;
-                    display: none;
-                    left: 0;
-                    top: 0;
-                    right: 0;
-                    bottom: 0;
-                    margin: auto;
-                    width: 5px;
-                    height: 5px;
-                    border: solid white;
-                    border-radius: 1px;
-                }
-            }
         }
     }
     &--list {
@@ -521,6 +467,135 @@ nav.primary {
         &:last-child {
             border-right: 0;
             padding-right: 0;
+        }
+    }
+}
+.modal {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    background-color: $white;
+    margin: auto 1rem;
+    display: none;
+
+    &.show {
+        display: block;
+    }
+    .modal-header {
+        background-color: $primary-blue;
+        color: $white;
+        position: relative;
+        padding: 1.5rem;
+
+        .close-modal {
+            background-color: initial;
+            border: none;
+            color: $white;
+            position: absolute;
+            right: .5rem;
+            top: .5rem;
+        }
+        .modal-pre-header {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .modal-title {
+            font-size: 2rem;
+            margin: .5rem 0;
+        }
+    }
+    .modal-body {
+        padding: 1.5rem;
+        font-size: 1.4rem;
+
+        .form-description {
+            margin-bottom: 1rem
+        }
+        .email-form {
+
+            label {
+                font-weight: bold;
+                padding-bottom: .75rem;
+            }
+            input:not([type=checkbox]), textarea {
+                border: 1px solid darken($grey, 10%);
+                padding: .5rem;
+                width: 100%;
+
+                &:after {
+                    content: '';
+                    position: relative;
+                    display: block;
+                    height: 10px;
+                    width: 10px;
+                    background-color: red;
+                }
+            }
+            & > .form-group {
+                margin: 1rem 0;
+
+                label {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+@each $type in $check-radio {
+    .#{$type}-container {
+        flex: 1;
+        display: block;
+        position: relative;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        padding-left: 2.5rem;
+        margin-bottom: 2rem;
+
+        @include for-tablet-landscape-up {
+            margin-bottom: 0;
+        }
+
+        input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+
+            &:checked ~ .#{$type} {
+                border: 0;
+
+                &:after {
+                    display: block;
+                }
+            }
+        }
+        .#{$type} {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 1.6rem;
+            width: 1.6rem;
+            border: 1px solid darken($grey, 10%);
+            border-radius: 4px;
+
+            &:after {
+                content: '';
+                position: absolute;
+                display: none;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                margin: auto;
+                width: 5px;
+                height: 5px;
+                border: solid white;
+                border-radius: 1px;
+            }
         }
     }
 }
