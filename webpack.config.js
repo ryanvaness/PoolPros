@@ -2,11 +2,12 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+require('babel-polyfill');
 
 module.exports = (env) => {
     const devMode = env.env !== 'production';
     return {
-        entry: './src/app.js',
+        entry: ['babel-polyfill', './src/app.js'],
         devtool: 'source-map',
         output: {
             filename: 'app.js',

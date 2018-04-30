@@ -11,6 +11,13 @@ body.open {
     }
 }
 
+.desktop-only {
+    display: none;
+
+    @include for-tablet-landscape-up {
+        display: block;
+    }
+}
 nav.primary.show {
     top: initial;
     text-align: left;
@@ -273,6 +280,143 @@ nav.primary {
                     height: 5px;
                     border: solid white;
                     border-radius: 1px;
+                }
+            }
+        }
+    }
+    &--list {
+
+        @include for-tablet-landscape-up {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: flex-start;
+        }
+        .dealer {
+            text-align: center;
+
+            @include for-tablet-landscape-up {
+                flex: 0 0 33%;
+                padding: .5rem;
+            }
+            &--title {
+                font-size: 2rem;
+                font-weight: 300;
+                margin: 2.5rem 0 2rem;
+                height: 4rem;
+            }
+            &--phone.mobile-only {
+                color: $white;
+                background-color: $secondary-blue;
+                border-radius: 2px;
+                position: relative;
+                display: inline-block;
+                padding: .7rem .7rem .7rem 3.5rem;
+
+                @include for-tablet-landscape-up {
+                    display: none;
+                }
+                &:before {
+                    content: '';
+                    height: 3.2rem;
+                    width: 3.2rem;
+                    top: 0;
+                    left: 0;
+                    position: absolute;
+                    background: $primary-blue url('/assets/images/phone-icon-mobile.png') center center no-repeat;
+                    background-size: contain;
+                }
+                .number {
+                    font-size: 1.8rem;
+                    font-weight: bold;
+                }
+            }
+            &--phone.desktop-only {
+                font-weight: bold;
+                font-size: 1.6rem;
+                
+                &:before {
+                    content: '';
+                    height: 2rem;
+                    width: 2rem;
+                    margin-right: 1rem;
+                    display: inline-block;
+                    background: url('/assets/images/phone-icon-desktop.png') center center no-repeat;
+                    background-size: contain;
+                }
+            }
+            &--email {
+                font-style: italic;
+                margin: 1rem 0;
+            }
+            &--contact {
+                background-color: $white;
+                box-shadow: initial;
+                border: 1px solid $tertiary-blue;
+                color: $primary-blue;
+                font-weight: bold;
+                font-size: 1.4rem;
+                padding: 1rem 1.5rem 1rem 2.5rem;
+                position: relative;
+
+                &:before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    left: 5px;
+                    height: 1.4rem;
+                    width: 1.4rem;
+                    background: url('/assets/images/email-icon.png') center center no-repeat;
+                    background-size: contain;
+                }
+            }
+            &--hours {
+                margin: 2rem auto;
+
+                & > h4 {
+                    font-size: 1.4rem;
+                    font-weight: bold;
+                }
+            }
+            &--certifications {
+                background-color: $grey;
+                padding: 2rem 3rem 2rem 4rem;
+                text-align: left;
+                height: 12rem;
+                
+                &:after {
+                    content: '';
+                    display: block;
+                    clear: both;
+                }
+                & > div {
+                    width: 50%;
+                    float: left;
+                    padding-left: 2rem;
+                    position: relative;
+                    margin-bottom: 1rem;
+
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        height: 15px;
+                        width: 15px;
+                        left: 0;
+                        display: block;
+                        background: center center no-repeat;
+                        background-size: contain;
+                    }
+                }
+                .installation:before {
+                    background-image: url('/assets/images/star-installation-pro.png');
+                }
+                .commercial:before {
+                    background-image: url('/assets/images/users-commercial-pro.png');
+                }
+                .residential:before {
+                    background-image: url('/assets/images/home-residential-pro.png');
+                }
+                .service:before {
+                    background-image: url('/assets/images/gear-service-pro.png');
                 }
             }
         }

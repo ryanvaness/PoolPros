@@ -1,4 +1,5 @@
 const styles = require('./app.scss');
+import dealer from './modules/dealer';
 
 document.addEventListener('click', function delegateClick(event) {
     const clickedElement = event.target;
@@ -15,10 +16,18 @@ document.addEventListener('click', function delegateClick(event) {
     }
 });
 
+document.addEventListener('change', function delegateChange(event) {
+    const clickedElement = event.target;
+    if (clickedElement.matches('input[name="category[]"]')) {
+        filterResults.call(event.target);
+    }
+});
+
 const openMenu = () => {
     toggleOverlay();
     document.querySelector('nav.primary').classList.add('show');
 }
+
 const closeMenu = () => {
     toggleOverlay();
     document.querySelector('nav.primary').classList.remove('show');
@@ -41,4 +50,24 @@ const toggleCategories = () => {
     const hasOpen = categories.classList.contains('open');
 
     categories.classList[hasOpen ? 'remove' : 'add']('open');
+}
+
+const filterResults = function () {
+    console.log(this.value);
+}
+
+let dealers = {};
+const response = fetch('/assets/data/dealers.json')
+    .then(response => response.json())
+    .then(json => {
+        dealers = json.dealers;
+        buildDealers(json);
+    });
+
+const buildDealers = data => {
+    document.querySelector('.count').textContent = data.dealers.length;
+    document.querySelector('.zip').textContent = data.zipcode;
+    document.querySelector('.dealers--list').innerHTML = data.dealers.map(function eachDealer({data}) {
+        return dealer(data);
+    }).join('');
 }

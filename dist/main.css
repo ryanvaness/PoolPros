@@ -120,6 +120,12 @@ body.open {
     bottom: 0;
     left: 0; }
 
+.desktop-only {
+  display: none; }
+  @media screen and (min-width: 900px) {
+    .desktop-only {
+      display: block; } }
+
 nav.primary.show {
   top: initial;
   text-align: left;
@@ -332,6 +338,115 @@ nav.primary {
         height: 5px;
         border: solid white;
         border-radius: 1px; }
+
+@media screen and (min-width: 900px) {
+  .dealers--list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start; } }
+
+.dealers--list .dealer {
+  text-align: center; }
+  @media screen and (min-width: 900px) {
+    .dealers--list .dealer {
+      flex: 0 0 33%;
+      padding: .5rem; } }
+  .dealers--list .dealer--title {
+    font-size: 2rem;
+    font-weight: 300;
+    margin: 2.5rem 0 2rem;
+    height: 4rem; }
+  .dealers--list .dealer--phone.mobile-only {
+    color: #ffffff;
+    background-color: #216ddf;
+    border-radius: 2px;
+    position: relative;
+    display: inline-block;
+    padding: .7rem .7rem .7rem 3.5rem; }
+    @media screen and (min-width: 900px) {
+      .dealers--list .dealer--phone.mobile-only {
+        display: none; } }
+    .dealers--list .dealer--phone.mobile-only:before {
+      content: '';
+      height: 3.2rem;
+      width: 3.2rem;
+      top: 0;
+      left: 0;
+      position: absolute;
+      background: #083d8c url("/assets/images/phone-icon-mobile.png") center center no-repeat;
+      background-size: contain; }
+    .dealers--list .dealer--phone.mobile-only .number {
+      font-size: 1.8rem;
+      font-weight: bold; }
+  .dealers--list .dealer--phone.desktop-only {
+    font-weight: bold;
+    font-size: 1.6rem; }
+    .dealers--list .dealer--phone.desktop-only:before {
+      content: '';
+      height: 2rem;
+      width: 2rem;
+      margin-right: 1rem;
+      display: inline-block;
+      background: url("/assets/images/phone-icon-desktop.png") center center no-repeat;
+      background-size: contain; }
+  .dealers--list .dealer--email {
+    font-style: italic;
+    margin: 1rem 0; }
+  .dealers--list .dealer--contact {
+    background-color: #ffffff;
+    box-shadow: initial;
+    border: 1px solid #02c7c6;
+    color: #083d8c;
+    font-weight: bold;
+    font-size: 1.4rem;
+    padding: 1rem 1.5rem 1rem 2.5rem;
+    position: relative; }
+    .dealers--list .dealer--contact:before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 5px;
+      height: 1.4rem;
+      width: 1.4rem;
+      background: url("/assets/images/email-icon.png") center center no-repeat;
+      background-size: contain; }
+  .dealers--list .dealer--hours {
+    margin: 2rem auto; }
+    .dealers--list .dealer--hours > h4 {
+      font-size: 1.4rem;
+      font-weight: bold; }
+  .dealers--list .dealer--certifications {
+    background-color: #f6f6f6;
+    padding: 2rem 3rem 2rem 4rem;
+    text-align: left;
+    height: 12rem; }
+    .dealers--list .dealer--certifications:after {
+      content: '';
+      display: block;
+      clear: both; }
+    .dealers--list .dealer--certifications > div {
+      width: 50%;
+      float: left;
+      padding-left: 2rem;
+      position: relative;
+      margin-bottom: 1rem; }
+      .dealers--list .dealer--certifications > div:before {
+        content: '';
+        position: absolute;
+        height: 15px;
+        width: 15px;
+        left: 0;
+        display: block;
+        background: center center no-repeat;
+        background-size: contain; }
+    .dealers--list .dealer--certifications .installation:before {
+      background-image: url("/assets/images/star-installation-pro.png"); }
+    .dealers--list .dealer--certifications .commercial:before {
+      background-image: url("/assets/images/users-commercial-pro.png"); }
+    .dealers--list .dealer--certifications .residential:before {
+      background-image: url("/assets/images/home-residential-pro.png"); }
+    .dealers--list .dealer--certifications .service:before {
+      background-image: url("/assets/images/gear-service-pro.png"); }
 
 .footer-logo {
   padding: 2rem 1rem 1rem;
